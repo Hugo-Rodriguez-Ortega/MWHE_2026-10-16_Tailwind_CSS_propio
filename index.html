@@ -34,66 +34,76 @@
             --font-titulo: "Inter Tight", sans-serif;
             --font-sans: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
 
+            --color-tinta: #0a0a0a;   /* texto y fondos oscuros */
+            --color-papel: #ffffff;   /* blanco puro: tarjetas y texto sobre negro */
+            --color-niebla: #f5f5f7;  /* gris muy claro de fondo, el de Apple */
+            --color-linea: #d2d2d7;   /* bordes finos de 1px */
+
+            --text-mini: 0.6875rem;                    /* 11px: menú, etiquetas, pie */
+            --text-base: 0.875rem;                     /* 14px: texto normal */
+            --text-titulo: 1.25rem;                    /* 20px: títulos de sección */
+            --text-portada: clamp(2rem, 5vw, 2.5rem);  /* 32px en móvil -> 40px en escritorio */
+
         }
     </style>
 </head>
-<body class="bg-stone-100 text-stone-800">
+<body class="bg-niebla text-tinta text-base">
 
     <!-- ================= 1. CABECERA ================= -->
-    <header class="bg-green-900 text-amber-50">
+    <header class="bg-tinta text-papel">
         <nav class="max-w-5xl mx-auto px-6 py-4 flex flex-col items-center gap-3 md:flex-row md:justify-between">
-            <a href="#" class="font-titulo text-2xl font-bold">La Aguja y el Tornillo</a>
-            <ul class="flex gap-6 text-sm font-bold uppercase tracking-wide">
-                <li><a href="#productos" class="hover:text-amber-300">Productos</a></li>
-                <li><a href="#horario" class="hover:text-amber-300">Horario</a></li>
-                <li><a href="#contacto" class="hover:text-amber-300">Contacto</a></li>
+            <a href="#" class="font-titulo text-base font-semibold">La Aguja y el Tornillo</a>
+            <ul class="flex gap-6 text-mini font-semibold uppercase tracking-wide">
+                <li><a href="#productos" class="hover:opacity-60">Productos</a></li>
+                <li><a href="#horario" class="hover:opacity-60">Horario</a></li>
+                <li><a href="#contacto" class="hover:opacity-60">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <!-- ================= 2. PORTADA ================= -->
-        <section class="bg-amber-100 border-b-4 border-green-900">
+        <section class="bg-niebla border-b border-linea">
             <div class="max-w-5xl mx-auto px-6 py-20 text-center">
-                <p class="text-sm font-bold uppercase tracking-widest text-red-700">Desde 1962 en el barrio</p>
-                <h1 class="mt-3 font-titulo text-4xl md:text-6xl font-bold text-green-900">Si no lo tenemos, se lo pedimos</h1>
-                <p class="mt-6 max-w-2xl mx-auto text-lg">
+                <p class="text-mini font-semibold uppercase tracking-widest text-tinta/50">Desde 1962 en el barrio</p>
+                <h1 class="mt-3 font-titulo text-portada font-semibold text-tinta">Si no lo tenemos, se lo pedimos</h1>
+                <p class="mt-6 max-w-2xl mx-auto text-base">
                     Tornillos sueltos, botones de repuesto, cremalleras, bombillas y copias de llaves.
                     Lo de toda la vida, con la atención de siempre.
                 </p>
-                <a href="#horario" class="inline-block mt-8 px-6 py-3 rounded-full bg-red-700 font-bold text-white hover:bg-red-800">Ver horario</a>
+                <a href="#horario" class="inline-block mt-8 px-6 py-3 rounded-full bg-tinta font-semibold text-papel hover:bg-tinta/80">Ver horario</a>
             </div>
         </section>
 
         <!-- ================= 3. PRODUCTOS ================= -->
         <section id="productos" class="max-w-5xl mx-auto px-6 py-16">
-            <h2 class="mb-10 font-titulo text-3xl font-bold text-center text-green-900">Qué encontrará en la tienda</h2>
+            <h2 class="mb-10 font-titulo text-titulo font-semibold text-center text-tinta">Qué encontrará en la tienda</h2>
 
             <div class="grid gap-6 md:grid-cols-3">
-                <article class="p-6 rounded-xl bg-white shadow-md border-t-8 border-green-900 transition hover:-translate-y-1 hover:shadow-xl">
-                    <h3 class="font-titulo text-xl font-bold">Ferretería</h3>
-                    <p class="mt-2 text-stone-600">Todo para los arreglos de casa, también por unidades.</p>
-                    <ul class="mt-4 space-y-1 text-sm">
+                <article class="p-6 rounded-xl bg-papel shadow-sm border border-linea transition hover:-translate-y-1 hover:shadow-lg">
+                    <h3 class="font-titulo text-base font-semibold">Ferretería</h3>
+                    <p class="mt-2 text-tinta/60">Todo para los arreglos de casa, también por unidades.</p>
+                    <ul class="mt-4 space-y-1 text-mini">
                         <li>Tornillos, tuercas y tacos</li>
                         <li>Herramienta de mano</li>
                         <li>Bombillas y enchufes</li>
                     </ul>
                 </article>
 
-                <article class="p-6 rounded-xl bg-white shadow-md border-t-8 border-red-700 transition hover:-translate-y-1 hover:shadow-xl">
-                    <h3 class="font-titulo text-xl font-bold">Mercería</h3>
-                    <p class="mt-2 text-stone-600">Para coser, remendar y dar una segunda vida a la ropa.</p>
-                    <ul class="mt-4 space-y-1 text-sm">
+                <article class="p-6 rounded-xl bg-papel shadow-sm border border-linea transition hover:-translate-y-1 hover:shadow-lg">
+                    <h3 class="font-titulo text-base font-semibold">Mercería</h3>
+                    <p class="mt-2 text-tinta/60">Para coser, remendar y dar una segunda vida a la ropa.</p>
+                    <ul class="mt-4 space-y-1 text-mini">
                         <li>Botones de todos los tamaños</li>
                         <li>Hilos, agujas y dedales</li>
                         <li>Cremalleras y gomas</li>
                     </ul>
                 </article>
 
-                <article class="p-6 rounded-xl bg-white shadow-md border-t-8 border-amber-500 transition hover:-translate-y-1 hover:shadow-xl">
-                    <h3 class="font-titulo text-xl font-bold">Servicios</h3>
-                    <p class="mt-2 text-stone-600">Lo hacemos en el momento, mientras espera.</p>
-                    <ul class="mt-4 space-y-1 text-sm">
+                <article class="p-6 rounded-xl bg-papel shadow-sm border border-linea transition hover:-translate-y-1 hover:shadow-lg">
+                    <h3 class="font-titulo text-base font-semibold">Servicios</h3>
+                    <p class="mt-2 text-tinta/60">Lo hacemos en el momento, mientras espera.</p>
+                    <ul class="mt-4 space-y-1 text-mini">
                         <li>Copia de llaves</li>
                         <li>Afilado de tijeras y cuchillos</li>
                         <li>Pedidos por encargo</li>
@@ -103,28 +113,28 @@
         </section>
 
         <!-- ================= 4. HORARIO Y CONTACTO ================= -->
-        <section id="horario" class="bg-white border-y-4 border-green-900">
+        <section id="horario" class="bg-papel border-y border-linea">
             <div class="max-w-5xl mx-auto px-6 py-16 flex flex-col gap-8 md:flex-row">
-                <div class="flex-1 p-6 rounded-xl bg-amber-100">
-                    <h2 class="font-titulo text-2xl font-bold text-green-900">Horario</h2>
+                <div class="flex-1 p-6 rounded-xl bg-niebla">
+                    <h2 class="font-titulo text-titulo font-semibold text-tinta">Horario</h2>
                     <ul class="mt-4 space-y-2">
-                        <li class="flex justify-between gap-4 border-b border-amber-300 pb-2"><span>Lunes a viernes</span><strong class="text-right">9:30 a 13:30 y 17:00 a 20:00</strong></li>
-                        <li class="flex justify-between gap-4 border-b border-amber-300 pb-2"><span>Sábados</span><strong>10:00 a 14:00</strong></li>
-                        <li class="flex justify-between gap-4"><span>Domingos</span><strong class="text-red-700">Cerrado</strong></li>
+                        <li class="flex justify-between gap-4 border-b border-linea pb-2"><span>Lunes a viernes</span><strong class="text-right">9:30 a 13:30 y 17:00 a 20:00</strong></li>
+                        <li class="flex justify-between gap-4 border-b border-linea pb-2"><span>Sábados</span><strong>10:00 a 14:00</strong></li>
+                        <li class="flex justify-between gap-4"><span>Domingos</span><strong class="text-tinta/50">Cerrado</strong></li>
                     </ul>
                 </div>
 
-                <div id="contacto" class="flex-1 p-6 rounded-xl bg-green-900 text-amber-50">
-                    <h2 class="font-titulo text-2xl font-bold">Dónde estamos</h2>
+                <div id="contacto" class="flex-1 p-6 rounded-xl bg-tinta text-papel">
+                    <h2 class="font-titulo text-titulo font-semibold">Dónde estamos</h2>
                     <p class="mt-4">Calle del Carmen, 12<br>Barrio de Lavapiés, Madrid</p>
-                    <p class="mt-4 text-2xl font-bold text-amber-300">915 55 12 12</p>
+                    <p class="mt-4 text-titulo font-semibold text-papel">915 55 12 12</p>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- ================= 5. PIE ================= -->
-    <footer class="py-6 text-center text-sm text-stone-500">
+    <footer class="py-6 text-center text-mini text-tinta/50">
         <p>La Aguja y el Tornillo · Ferretería y Mercería · Desde 1962</p>
     </footer>
 
